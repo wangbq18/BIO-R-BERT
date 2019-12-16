@@ -20,18 +20,6 @@ def load_tokenizer(args):
     return tokenizer
 
 
-def write_prediction(args, output_file, preds):
-    """
-    For official evaluation script
-    :param output_file: prediction_file_path (e.g. eval/proposed_answers.txt)
-    :param preds: [0,1,0,2,18,...]
-    """
-    relation_labels = get_label(args)
-    with open(output_file, 'w', encoding='utf-8') as f:
-        for idx, pred in enumerate(preds):
-            f.write("{}\t{}\n".format(8001 + idx, relation_labels[pred]))
-
-
 def init_logger():
     logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
                         datefmt='%m/%d/%Y %H:%M:%S',

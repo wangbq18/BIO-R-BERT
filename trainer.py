@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from transformers import BertConfig, AdamW, get_linear_schedule_with_warmup
 
 from model import RBERT
-from utils import set_seed, write_prediction, compute_metrics, get_label
+from utils import set_seed, compute_metrics, get_label
 
 logger = logging.getLogger(__name__)
 
@@ -167,7 +167,6 @@ class Trainer(object):
         for key in sorted(results.keys()):
             logger.info("  %s = %s", key, str(results[key]))
 
-        write_prediction(self.args, os.path.join(self.args.eval_dir, "proposed_answers.txt"), preds)
         return results
 
     def save_model(self):
