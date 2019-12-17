@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser.add_argument("--test_file", default="test.tsv", type=str, help="Test file")
     parser.add_argument("--label_file", default="label.txt", type=str, help="Label file")
 
-    parser.add_argument("--pretrained_model_name", default="biobert_v1.1_pubmed", required=False, help="Pretrained model name")
+    parser.add_argument("--pretrained_model_name", default="monologg/biobert_v1.1_pubmed", required=False, help="Pretrained model name")
 
     parser.add_argument('--seed', type=int, default=42, help="random seed for initialization")
     parser.add_argument("--batch_size", default=4, type=int, help="Batch size for training and evaluation.")
